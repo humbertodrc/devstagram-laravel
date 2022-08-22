@@ -12,7 +12,8 @@
     </div>
     {{-- Formulario --}}
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-      <form action="/crear-cuenta" method="POST">
+      <form action="{{ route('register') }}" method="POST">
+        @csrf
         <div class="mb-5">
           <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
           <input id="name" name="name" type="text" placeholder="Tu nombre" class="border p-3 w-full rounded-lg"  />
