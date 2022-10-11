@@ -29,7 +29,7 @@
                 <div class="mb-5">
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
                     <input id="username" name="username" type="text" placeholder="Tu nombre de usuario"
-                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                        class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
                         value="{{ old('username') }}" />
                     {{-- Mensaje de error que viene de la validacion --}}
                     @error('username')
@@ -51,8 +51,7 @@
                 <div class="mb-5">
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
                     <input id="password" name="password" type="password" placeholder="Password de Registro"
-                        class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
-                        value="{{ old('password') }}" />
+                        class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror" />
                     @error('password')
                         <span class="text-red-500 text-sm italic">{{ $message }}</span>
                     @enderror
@@ -62,7 +61,8 @@
                     <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Repetir
                         Password</label>
                     <input id="password_confirmation" name="password_confirmation" type="password"
-                        placeholder="Repite tu Password" class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500 @enderror" value="{{old('password_confirmation')}}" />
+                        placeholder="Repite tu Password"
+                        class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500 @enderror" />
                     @error('password_confirmation')
                         <span class="text-red-500 text-sm italic">{{ $message }}</span>
                     @enderror
