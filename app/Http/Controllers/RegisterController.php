@@ -21,6 +21,9 @@ class RegisterController extends Controller
         // dd($request);
         // dd($request->get('username'));
 
+        // Modificar el request para que el username sea unico "no es muy seguro"
+        $request->request->add(['username' => Str::slug($request->username)]);
+
         $this->validate($request, [
             'name' => 'required | max:30',
             'username' => 'required | min:3 | max:30 | unique:users',
@@ -34,7 +37,7 @@ class RegisterController extends Controller
         // Guardar el usuario en la base de datos
         User::create([
             'name' => $request->name,
-            'username' => Str::slug($request->username),
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
