@@ -18,6 +18,14 @@ class LoginController extends Controller
         $this->validate($request, [
             'email' => 'required | email ',
             'password' => 'required',
-    ]);
+        ]);
+
+        // Comprobar si las credenciales son correctas
+        if(!auth()->attempt($request->only('email', 'password'))){
+            return back()->with('mensaje', 'Credenciales incorrectas');
+        }
+
+        return  redirect()->route('post.index');
+
     }
 }
