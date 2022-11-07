@@ -13,6 +13,6 @@ class LogoutController extends Controller
         auth()->logout();
 
         // Redireccionar al login
-        return redirect()->route('login');  
+        return redirect()->route('login');   
     }
 }
