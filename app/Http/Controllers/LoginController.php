@@ -11,4 +11,13 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+
+    // Metodo para guardar la data cuando se hace el login
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required | email ',
+            'password' => 'required',
+    ]);
+    }
 }
