@@ -39,6 +39,9 @@
                         <span class="text-red-500 text-sm italic">{{ $message }}</span>
                     @enderror
                 </div>
+                <div class="mb-5">
+                    <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-gray-500 font-bold">Mantener mi sesión abierta</label>
+                </div>
                 {{-- Submit --}}
                 <input type="submit" type="submit" value="Iniciar Sesión"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg" />
