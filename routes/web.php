@@ -27,5 +27,6 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/muro', [PostController::class, 'index'])->name('post.index');
+// Route Model Binding le indicamos cual de los valores que esta en la base de datos queremos que se muestre en la ruta, accediendo por medio del controlador User
+Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');
 

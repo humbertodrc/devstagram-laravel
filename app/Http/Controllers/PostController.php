@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,8 +13,9 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(User $user)
     {
+        // dd($user->username);
         return view('dashboard'); // dashboard es el nombre de la vista que esta en la carpeta resources/views/dashboard.blade.php
     }
 }
