@@ -16,6 +16,9 @@ class PostController extends Controller
     public function index(User $user)
     {
         // dd($user->username);
-        return view('dashboard'); // dashboard es el nombre de la vista que esta en la carpeta resources/views/dashboard.blade.php
+        // A la vista tambien le puedo pasar datos
+        return view('dashboard', [
+            'user' => $user
+        ]); // dashboard es el nombre de la vista que esta en la carpeta resources/views/dashboard.blade.php
     }
 }
