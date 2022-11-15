@@ -21,4 +21,9 @@ class PostController extends Controller
             'user' => $user
         ]); // dashboard es el nombre de la vista que esta en la carpeta resources/views/dashboard.blade.php
     }
+
+    public function create()
+    {
+        dd('creando post...');
+    }
 }
